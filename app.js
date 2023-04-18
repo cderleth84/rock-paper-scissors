@@ -18,20 +18,61 @@
 // console.log(paperChoice);
 // console.log(scissorsChoice);
 
+const randomNumber = Math.floor(Math.random() * 3);
 let userChoice;
+let computerChoice;
+let result;
 
-function chooseRock(rockChoice) {
-  userChoice = rockChoice;
-  console.log(userChoice);
-  alert(`You chose ${userChoice}`);
+function playGame(userChoice, computerChoice) {
+  function playerChoice(playerChoice) {
+    userChoice = playerChoice;
+    document.getElementById("user-choice").innerHTML = userChoice;
+    return userChoice;
+  }
+  playerChoice(userChoice);
+
+  function computerSelector(randomNumber) {
+    if (randomNumber === 0) {
+      computerChoice = "rock";
+      document.getElementById("computer-choice").innerHTML = computerChoice;
+      return computerChoice;
+    } else if (randomNumber === 1) {
+      computerChoice = "paper";
+      document.getElementById("computer-choice").innerHTML = computerChoice;
+      return computerChoice;
+    } else {
+      computerChoice = "scissors";
+      document.getElementById("computer-choice").innerHTML = computerChoice;
+      return computerChoice;
+    }
+  }
+  computerSelector(randomNumber);
+
+  if (userChoice == computerChoice) {
+    result = "Tie";
+    document.getElementById("result").innerHTML = result;
+    return result;
+  } else if (userChoice == "Rock" && computerChoice == "Paper") {
+    result = "Computer Wins";
+    document.getElementById("result").innerHTML = result;
+    return result;
+  } else if (userChoice == "Paper" && computerChoice == "Scissors") {
+    result = "Computer Wins";
+    document.getElementById("result").innerHTML = result;
+    return result;
+  } else if (userChoice == "Scissors" && computerChoice == "Rock") {
+    result = "Computer Wins";
+    document.getElementById("result").innerHTML = result;
+    return result;
+  } else {
+    result = "You Win!";
+    document.getElementById("result").innerHTML = result;
+    return result;
+  }
 }
 
-function choosePaper(paperChoice) {
-  userChoice = paperChoice;
-  alert(`You chose ${userChoice}`);
-}
-
-function chooseScissors(scissorsChoice) {
-  userChoice = scissorsChoice;
-  alert(`You chose ${userChoice}`);
-}
+// Play again
+// if (confirm("Play Again?")) {
+//   console.log("Playing Again");
+// }
+// console.log("Not playing again");

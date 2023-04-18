@@ -7,20 +7,28 @@
     <title>Document</title>
   </head>
   <body>
-    <h2>Your Choice:<span id="user-choice"></span></h2>
-    <h2>Computer Choice:<span id="computer-choice"></span></h2>
-    <h2>Result:<span id="result"></span></h2>
+    <h2>Your Choice: <span id="user-choice"></span></h2>
+    <h2>Computer Choice: <span id="computer-choice"></span></h2>
+    <h2>Result: <span id="result"></span></h2>
 
-    <button class="rps-button" id="rock" onclick="chooseRock('rock')">
+    <button
+      class="rps-button"
+      id="rock"
+      onclick="playGame('rock', computerChoice)"
+    >
       rock
     </button>
-    <button class="rps-button" id="paper" onclick="choosePaper('paper')">
+    <button
+      class="rps-button"
+      id="paper"
+      onclick="playGame('paper', computerChoice)"
+    >
       paper
     </button>
     <button
       class="rps-button"
       id="scissors"
-      onclick="chooseScissors('scissors')"
+      onclick="playGame('scissors', computerChoice)"
     >
       scissors
     </button>
